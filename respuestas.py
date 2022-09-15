@@ -69,6 +69,19 @@ def carreras():
     res = res.to_json()
     return res
 
+def campeones():
+    sql_campeones = 'SELECT c.name, c.year, b.driverRef FROM pi01.results a left join pi01.drivers b on a.driverId = b.driverId left join pi01.races c on a.raceId = c.raceId where a.positionOrder = "1";'
+    res = pd.read_sql_query(sql_campeones, conexion)
+    res = res.to_json()
+    return res
+
+def pilot_wins(nom):
+    sql_wins = f'SELECT c.name, c.year, b.driverRef FROM pi01.results a left join pi01.drivers b on a.driverId = b.driverId left join pi01.races c on a.raceId = c.raceId where a.positionOrder = "1" and b.driverRef like "%%{nom}%%";'
+    res = pd.read_sql_query(sql_wins, conexion)
+    res = res.to_json()
+    return res
+
+
 
 #sql5 = 'select count(*) from results4'
 #df5 = pd.read_sql_query(sql5,conexion)

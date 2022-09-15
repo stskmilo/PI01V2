@@ -34,6 +34,14 @@ async def constructores():
 async def carreras():
     return respuestas.carreras()
 
+@app.get('/{pilot}/wins')
+async def piloto_wins(pilot):
+    return respuestas.pilot_wins(pilot)
+
+@app.get('/tabla/campeones')
+async def campeones():
+    return respuestas.campeones()
+
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
 #uvicorn main:app --reload
