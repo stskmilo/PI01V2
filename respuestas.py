@@ -50,6 +50,26 @@ def pilotos():
     pilotos = pd.read_sql_query(sql_drivers,conexion)
     pilotos = pilotos.to_json()
     return pilotos
+
+def circuitos():
+    sql_pilotos = 'select * from circuits'
+    res = pd.read_sql_query(sql_pilotos, conexion)
+    res = res.to_json()
+    return res
+
+def constructores():
+    sql_const = 'select * from constructors'
+    res = pd.read_sql_query(sql_const, conexion)
+    res = res.to_json()
+    return res
+
+def carreras():
+    sql_races = 'select * from races'
+    res = pd.read_sql_query(sql_races, conexion)
+    res = res.to_json()
+    return res
+
+
 #sql5 = 'select count(*) from results4'
 #df5 = pd.read_sql_query(sql5,conexion)
 #print(df5)

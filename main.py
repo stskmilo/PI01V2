@@ -22,6 +22,18 @@ async def respuesta(id):
 async def pilotos():
     return respuestas.pilotos()
 
+@app.get('/tabla/circuitos')
+async def circuitos():
+    return respuestas.circuitos()
+
+@app.get('/tabla/constructores')
+async def constructores():
+    return respuestas.constructores()
+
+@app.get('/tabla/carreras')
+async def carreras():
+    return respuestas.carreras()
+
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000)
 #uvicorn main:app --reload
