@@ -18,6 +18,9 @@ Adicionalmente, se retorna un dataset con los datos de los distintos pilotos /ta
     - /tabla/circuitos
     - /tabla/constructores
     - /tabla/carreras
+    - /tabla/campeones
+    - /tabla/pilotos
+    - /PILOTO/wins : mostrará búsqueda de victoria de piloto indicado. Ver /tabla/pilotos para obtener posibles valores. Podrán indicar nombre incompleto. Ej: /mi/wins traerá a las victorias de "MI"chael Schumacher y ha"MI"lton
 
 El deployment fue realizado de forma local con una base de datos MySQL y un servidor ASGI mediante el uso de FastAPI y Uvicorn
 
